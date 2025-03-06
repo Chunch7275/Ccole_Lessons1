@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Unity.Netcode;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     private Rigidbody rbplayer;
 
@@ -13,24 +14,29 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ForceMode forcemode;
 
-    public GameObject spawnPoint;
+    public GameObject[] spawnPoints;
 
-    private Dictionary<Item.VegetableType, int> inventory = new Dictionary<Item.VegetableType, int>();
     
 
     // Start is called before the first frame update
     void Start()
     {
         rbplayer = GetComponent<Rigidbody>();
+
+        spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+
+        Respawn();
         
-        foreach (Item.VegetableType type in System.Enum.GetValues(typeof(Item.VegetableType)))
-        {
-            inventory.Add(type, 0);
-        }
+
     }
 
     void Update()
     {
+        if (!IsLocalPlayer)
+        {
+            return;
+        }
+
         float HorizontalVelocity = Input.GetAxis("Horizontal");
         float VerticalVelocity = Input.GetAxis("Vertical");
         
@@ -39,6 +45,25 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
+    {
+        if (!IsLocalPlayer)
+        {
+            return;
+        }
+
+        if (IsServer)
+        {
+            Move(direction);
+        } 
+        else
+        {
+            MoveRpc(direction);
+        }
+        
+
+    }
+
+    private void Move(Vector3 input)
     {
         rbplayer.AddForce(direction * ForceMultiplier, forcemode);
 
@@ -51,41 +76,29 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, -38);
         }
     }
+    [Rpc(SendTo.Server)]
+    public void MoveRpc(Vector3 input)
+    {
+        Move(input);
+    }
 
     private void Respawn()
     {
-        rbplayer.MovePosition(spawnPoint.transform.position);
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.CompareTag("Vegetable"))
+        int index = 0;
+        while (Physics.CheckBox(spawnPoints[index].transform.position, new Vector3 (1.0f, 1.0f, 1.0f)))
         {
-            Item item = collider.GetComponent<Item>();
-            AddItemToInventory(item);
-            PrintInventory();
+            index++;
         }
-    }
-
-    private void AddItemToInventory(Item item)
-    {
-        inventory[item.veggieType]++;
-    }
-
-    private void PrintInventory()
-    {
-        string output = "";
-
-        foreach (KeyValuePair<Item.VegetableType, int> pair in inventory)
-        {
-            output += string.Format("{0}: {1}; ", pair.Key, pair.Value);
-        }
-
-        Debug.Log(output);
+        rbplayer.MovePosition(spawnPoints[index].transform.position);
     }
 
     void OnTriggerExit(Collider collider)
     {
+        if (!IsServer)
+        {
+            return;
+        }
+
         if (collider.CompareTag("Hazard"))
         {
             Respawn();
