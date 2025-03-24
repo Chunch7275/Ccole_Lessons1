@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>Unity.Netcode.Components</RootNamespace>
-    <ProjectGuid>{44E1C3C5-0667-2A54-7BE4-09D41FDB6851}</ProjectGuid>
+    <ProjectGuid>{7720A145-62BA-8349-39E7-A907267DF503}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Netcode.Components</AssemblyName>
@@ -844,19 +844,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Netcode.Runtime.Player.csproj">
-      <Project>{D7B95824-38FF-1BCE-74C2-0CF2DC325185}</Project>
+      <Project>{086FAEC8-5BA6-5A69-B9A7-D011DC13525B}</Project>
       <Name>Unity.Netcode.Runtime.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
-      <Project>{4B59D7CC-8A8B-82A7-28E5-C0FC77EB5115}</Project>
+      <Project>{B0D658D8-CC44-139C-92C9-9EB8ED081A1F}</Project>
       <Name>Unity.Collections.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{CBCE1BC5-E274-4749-8841-3160ABF34292}</Project>
+      <Project>{30BBE63E-BC8F-9459-6116-A117F93D8558}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{AEAEFA6A-AA9D-3CCB-120A-92AB2E870C30}</Project>
+      <Project>{3D87DCF9-E29C-715D-597D-D05B67808B2F}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

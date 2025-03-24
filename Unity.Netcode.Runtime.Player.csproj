@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>Unity.Netcode</RootNamespace>
-    <ProjectGuid>{D7B95824-38FF-1BCE-74C2-0CF2DC325185}</ProjectGuid>
+    <ProjectGuid>{086FAEC8-5BA6-5A69-B9A7-D011DC13525B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Netcode.Runtime</AssemblyName>
@@ -970,23 +970,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Networking.Transport.Player.csproj">
-      <Project>{B73B040C-51BF-EE06-869F-BBE4F12F2628}</Project>
+      <Project>{10357709-4F63-1F26-3800-54E3474C127E}</Project>
       <Name>Unity.Networking.Transport.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.Player.csproj">
-      <Project>{4B59D7CC-8A8B-82A7-28E5-C0FC77EB5115}</Project>
+      <Project>{B0D658D8-CC44-139C-92C9-9EB8ED081A1F}</Project>
       <Name>Unity.Collections.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
-      <Project>{C7151582-6779-375C-F27D-2FAD5C04EE8A}</Project>
+      <Project>{3D5BB89A-B239-813A-41D9-216C519D5CA1}</Project>
       <Name>Unity.Burst.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.Player.csproj">
-      <Project>{CBCE1BC5-E274-4749-8841-3160ABF34292}</Project>
+      <Project>{30BBE63E-BC8F-9459-6116-A117F93D8558}</Project>
       <Name>Unity.Mathematics.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{AEAEFA6A-AA9D-3CCB-120A-92AB2E870C30}</Project>
+      <Project>{3D87DCF9-E29C-715D-597D-D05B67808B2F}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1D62328C-47FD-C644-38DE-00C2E78CC6E7}</ProjectGuid>
+    <ProjectGuid>{ED0A8E26-1EA3-8D8A-4348-2C4CAEA5EB9F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Burst.Editor</AssemblyName>
@@ -422,6 +422,10 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -979,23 +983,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{039A0ADD-DCAE-A0E2-01CA-3FEA0D44B28B}</Project>
+      <Project>{CBB158D8-6D0A-CA5B-0AD9-04DE7DA08BDF}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{E4586B6E-C782-93A0-0900-36F319E2D53F}</Project>
+      <Project>{B87B0EEE-D394-2CB8-3FAF-370FA3BC6461}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{B189D71B-98D2-430B-FF03-3275076C6ADD}</Project>
+      <Project>{A2D503DA-3FF8-AC04-AA54-56BF22DCB4AD}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{14D4B466-78A9-D899-C7D8-EF2552A6EC62}</Project>
+      <Project>{A8935612-79ED-801A-8052-2C7DBD9A253D}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{C8722567-8E2C-AFB1-0A25-D4F508F8F78E}</Project>
+      <Project>{1811019B-8574-C574-301B-D226936B4C03}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

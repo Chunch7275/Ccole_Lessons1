@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F312A4ED-6444-9AE6-C2D9-1817F6F07D72}</ProjectGuid>
+    <ProjectGuid>{B7B16F13-00C8-FA6C-AE4F-D9BEF121C105}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.VisualScripting.State</AssemblyName>
@@ -430,6 +430,10 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -971,19 +975,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
-      <Project>{05FA1CE7-94E3-F041-9A52-19106B62C7A4}</Project>
+      <Project>{F087B35C-F50A-023F-2A84-4097EAAD82EE}</Project>
       <Name>Unity.VisualScripting.Core</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
-      <Project>{BAB12180-37C2-A275-CC03-9C3B254057C5}</Project>
+      <Project>{BDE62BC4-2DA5-C4BF-7942-74E7029D4352}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{E4586B6E-C782-93A0-0900-36F319E2D53F}</Project>
+      <Project>{B87B0EEE-D394-2CB8-3FAF-370FA3BC6461}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{B189D71B-98D2-430B-FF03-3275076C6ADD}</Project>
+      <Project>{A2D503DA-3FF8-AC04-AA54-56BF22DCB4AD}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>

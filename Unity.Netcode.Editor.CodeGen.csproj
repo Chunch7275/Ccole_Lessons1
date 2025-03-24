@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>Unity.Netcode.Editor.CodeGen</RootNamespace>
-    <ProjectGuid>{A24E0159-837E-679D-7EF2-D6C668A9B369}</ProjectGuid>
+    <ProjectGuid>{F82E0EE2-FA31-DDE8-A43B-E8769E46AA88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Netcode.Editor.CodeGen</AssemblyName>
@@ -411,6 +411,10 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
@@ -944,11 +948,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Netcode.Runtime.csproj">
-      <Project>{D20933CD-F597-6C24-BA6F-6A8A0FA2A96B}</Project>
+      <Project>{68039488-6097-2F3A-D988-F7CF3AFD07F4}</Project>
       <Name>Unity.Netcode.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Collections.csproj">
-      <Project>{DE73E9E7-3129-E362-A5DC-D8AA7558B09E}</Project>
+      <Project>{2BFB6739-F850-8154-FBB3-C10D78953864}</Project>
       <Name>Unity.Collections</Name>
     </ProjectReference>
   </ItemGroup>
