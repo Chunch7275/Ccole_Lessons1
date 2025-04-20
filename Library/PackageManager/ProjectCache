@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638768289762718526
-    m_Hash: 3653904511
+      ticks: 638807133381671728
+    m_Hash: 2941738639
   m_LockFileStatus:
     m_FilePath: D:/Lessons/Ccole_Lessons/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638768289763693813
-    m_Hash: 3643264391
+      ticks: 638807133383436641
+    m_Hash: 3519583134
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,102 @@ m_LocalPackages:
 m_ProjectPath: D:/Lessons/Ccole_Lessons/Packages
 m_EditorVersion: 2022.3.57f1 (9d8bd91adc0a)
 m_ResolvedPackages:
+- packageId: com.unity.ai.navigation@1.1.6
+  testable: 0
+  isDirectDependency: 1
+  version: 1.1.6
+  source: 1
+  resolvedPath: D:\Lessons\Ccole_Lessons\Library\PackageCache\com.unity.ai.navigation@1.1.6
+  assetPath: Packages/com.unity.ai.navigation
+  name: com.unity.ai.navigation
+  displayName: AI Navigation
+  author:
+    name: 
+    email: 
+    url: 
+  category: 
+  type: 
+  description: High-level NavMesh components for building and using NavMeshes at
+    runtime and at edit time.
+  status: 0
+  errors: []
+  versions:
+    all:
+    - 1.0.0-exp.2
+    - 1.0.0-exp.3
+    - 1.0.0-exp.4
+    - 1.1.0-pre.1
+    - 1.1.0-pre.2
+    - 1.1.1
+    - 1.1.3
+    - 1.1.4
+    - 1.1.5
+    - 1.1.6
+    - 2.0.0-pre.3
+    - 2.0.0-pre.4
+    - 2.0.0
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    - 2.0.7
+    compatible:
+    - 1.1.5
+    - 1.1.6
+    recommended: 1.1.6
+    deprecated: []
+  dependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  resolvedDependencies:
+  - name: com.unity.modules.ai
+    version: 1.0.0
+  keywords:
+  - carving
+  - mesh
+  - navigation
+  - navmesh
+  - NavMesh
+  - navmesh agent
+  - navmesh link
+  - navmeshlink
+  - navmesh modifier
+  - navmeshmodifier
+  - navmesh modifier volume
+  - navmeshmodifiervolume
+  - navmesh obstacle
+  - navmesh surface
+  - navmeshsurface
+  - offmesh link
+  - off-mesh link
+  - pathfinding
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 638804054560000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.cds.internal.unity3d.com/unity/com.unity.ai.navigation.git
+    revision: f6af42e7acca43eff2b426b1afd4925248486b1d
+    path: 
+  unityLifecycle:
+    version: 1.1.5
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  fingerprint: 
 - packageId: com.unity.collab-proxy@2.7.1
   testable: 0
   isDirectDependency: 1
@@ -326,6 +422,8 @@ m_ResolvedPackages:
     - 2.0.0
     - 2.1.1
     - 2.2.0
+    - 2.3.0
+    - 2.3.1
     compatible:
     - 1.12.0
     - 1.12.1
@@ -2939,6 +3037,8 @@ m_ResolvedPackages:
     - 2.2.1
     - 2.3.0
     - 2.4.0
+    - 2.5.0
+    - 2.5.1
     compatible:
     - 1.5.0
     - 2.0.0-exp.6
@@ -2956,7 +3056,9 @@ m_ResolvedPackages:
     - 2.2.1
     - 2.3.0
     - 2.4.0
-    recommended: 
+    - 2.5.0
+    - 2.5.1
+    recommended: 2.5.1
     deprecated: []
   dependencies:
   - name: com.unity.burst
@@ -3125,9 +3227,11 @@ m_ResolvedPackages:
     - 2.0.20
     - 2.0.21
     - 2.0.22
+    - 2.0.23
     compatible:
     - 2.0.22
-    recommended: 2.0.22
+    - 2.0.23
+    recommended: 2.0.23
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -3236,10 +3340,12 @@ m_ResolvedPackages:
     - 3.0.31
     - 3.0.34
     - 3.0.35
+    - 3.0.36
     compatible:
     - 3.0.34
     - 3.0.35
-    recommended: 3.0.35
+    - 3.0.36
+    recommended: 3.0.36
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -3887,10 +3993,14 @@ m_ResolvedPackages:
     - 1.8.17
     - 1.8.18
     - 1.8.19
+    - 1.8.20
+    - 1.8.21
     compatible:
     - 1.8.18
     - 1.8.19
-    recommended: 1.8.19
+    - 1.8.20
+    - 1.8.21
+    recommended: 1.8.21
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -4000,6 +4110,7 @@ m_ResolvedPackages:
     - 1.3.1
     - 1.4.0
     - 1.5.1
+    - 1.5.2
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
@@ -4023,11 +4134,14 @@ m_ResolvedPackages:
     - 2.5.1
     - 2.5.2
     - 2.5.3
+    - 2.5.7
+    - 2.6.0-exp.2
     compatible:
     - 1.2.4
     - 1.3.1
     - 1.4.0
     - 1.5.1
+    - 1.5.2
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
@@ -4051,7 +4165,9 @@ m_ResolvedPackages:
     - 2.5.1
     - 2.5.2
     - 2.5.3
-    recommended: 2.5.3
+    - 2.5.7
+    - 2.6.0-exp.2
+    recommended: 2.5.7
     deprecated: []
   dependencies:
   - name: com.unity.burst
@@ -4208,8 +4324,10 @@ m_ResolvedPackages:
     - 1.0.3
     - 2.0.0
     - 2.0.1
+    - 2.1.0
     compatible:
     - 2.0.1
+    - 2.1.0
     recommended: 2.0.1
     deprecated: []
   dependencies: []

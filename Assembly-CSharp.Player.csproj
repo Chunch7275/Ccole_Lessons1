@@ -60,14 +60,22 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Forest\NavPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CountGui.cs" />
     <Compile Include="Assets\Scripts\ItemCollect.cs" />
+    <Compile Include="Assets\Scripts\Forest\BearAgent.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\NetworkHelper.cs" />
+    <Compile Include="Assets\Scripts\Forest\NPC.cs" />
+    <Compile Include="Assets\Scripts\Forest\Swarm.cs" />
+    <Compile Include="Assets\Scripts\Forest\HivePickUp.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Drift.cs" />
+    <Compile Include="Assets\Scripts\Forest\Hover.cs" />
+    <Compile Include="Assets\Scripts\Forest\Bot.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Forest\UIUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -859,6 +867,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
+      <Project>{C1303838-F82B-349C-2E02-04EB6756D00F}</Project>
+      <Name>Unity.AI.Navigation.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Burst.Player.csproj">
       <Project>{3D5BB89A-B239-813A-41D9-216C519D5CA1}</Project>
       <Name>Unity.Burst.Player</Name>
@@ -871,13 +883,13 @@
       <Project>{10357709-4F63-1F26-3800-54E3474C127E}</Project>
       <Name>Unity.Networking.Transport.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{3D87DCF9-E29C-715D-597D-D05B67808B2F}</Project>
-      <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
       <Project>{B276FC06-D848-ED64-1053-4641ABA8A7C6}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.Player.csproj">
+      <Project>{3D87DCF9-E29C-715D-597D-D05B67808B2F}</Project>
+      <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Netcode.Components.Player.csproj">
       <Project>{7720A145-62BA-8349-39E7-A907267DF503}</Project>

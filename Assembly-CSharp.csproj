@@ -60,14 +60,22 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Forest\NavPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CountGui.cs" />
     <Compile Include="Assets\Scripts\ItemCollect.cs" />
+    <Compile Include="Assets\Scripts\Forest\BearAgent.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\NetworkHelper.cs" />
+    <Compile Include="Assets\Scripts\Forest\NPC.cs" />
+    <Compile Include="Assets\Scripts\Forest\Swarm.cs" />
+    <Compile Include="Assets\Scripts\Forest\HivePickUp.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Drift.cs" />
+    <Compile Include="Assets\Scripts\Forest\Hover.cs" />
+    <Compile Include="Assets\Scripts\Forest\Bot.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Forest\UIUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -935,6 +943,10 @@
       <Project>{4F217E60-A4E7-3FB7-BCD9-418E695A0324}</Project>
       <Name>Unity.EditorCoroutines.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.csproj">
+      <Project>{0A1CAB6D-3EEA-62C5-C4E3-6FED2B006654}</Project>
+      <Name>Unity.AI.Navigation</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Burst.Editor.csproj">
       <Project>{ED0A8E26-1EA3-8D8A-4348-2C4CAEA5EB9F}</Project>
       <Name>Unity.Burst.Editor</Name>
@@ -955,10 +967,6 @@
       <Project>{C2B76B48-2456-E642-7503-F55768816A46}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{B87B0EEE-D394-2CB8-3FAF-370FA3BC6461}</Project>
-      <Name>UnityEditor.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{F087B35C-F50A-023F-2A84-4097EAAD82EE}</Project>
       <Name>Unity.VisualScripting.Core</Name>
@@ -971,21 +979,17 @@
       <Project>{842DCEE8-4EFA-6616-40FC-01E1A55F87EB}</Project>
       <Name>Unity.VisualScripting.Core.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{B87B0EEE-D394-2CB8-3FAF-370FA3BC6461}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{1C4DFF91-6AF5-29A6-2FC0-9CCD0DBB4F1E}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{A2D503DA-3FF8-AC04-AA54-56BF22DCB4AD}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{BDE62BC4-2DA5-C4BF-7942-74E7029D4352}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Netcode.Components.csproj">
-      <Project>{027D424C-2E42-977A-5705-8FAEFCC6A5E1}</Project>
-      <Name>Unity.Netcode.Components</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj">
       <Project>{95C9591D-5BA3-D228-6E8D-CED032C1447B}</Project>
@@ -994,6 +998,14 @@
     <ProjectReference Include="Unity.Mathematics.Editor.csproj">
       <Project>{4A0B5AFC-4F8A-2E02-4D01-E2BF23EEF170}</Project>
       <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{A2D503DA-3FF8-AC04-AA54-56BF22DCB4AD}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Netcode.Components.csproj">
+      <Project>{027D424C-2E42-977A-5705-8FAEFCC6A5E1}</Project>
+      <Name>Unity.Netcode.Components</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{7861B66E-E6C9-0F8B-D373-176A625C3BCF}</Project>
@@ -1031,6 +1043,10 @@
       <Project>{68039488-6097-2F3A-D988-F7CF3AFD07F4}</Project>
       <Name>Unity.Netcode.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Updater.csproj">
+      <Project>{683DD237-D304-ACBF-820C-1F64C09C9741}</Project>
+      <Name>Unity.AI.Navigation.Updater</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{37B85A29-148E-7529-B35A-3BCB3EBB9F49}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
@@ -1059,9 +1075,17 @@
       <Project>{70174473-21BA-6321-A7AB-605A84A8A664}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj">
+      <Project>{B57A0C24-B895-C029-D3EB-CD4815664120}</Project>
+      <Name>Unity.AI.Navigation.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.csproj">
       <Project>{B7B16F13-00C8-FA6C-AE4F-D9BEF121C105}</Project>
       <Name>Unity.VisualScripting.State</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.AI.Navigation.Editor.ConversionSystem.csproj">
+      <Project>{878B4033-382F-C302-C1E1-B9039F2EA482}</Project>
+      <Name>Unity.AI.Navigation.Editor.ConversionSystem</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{7EA45E3D-842A-E4CE-DF91-035D95A4097A}</Project>

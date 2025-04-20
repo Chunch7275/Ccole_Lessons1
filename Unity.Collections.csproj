@@ -109,8 +109,8 @@
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\NativeHashSet.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\FixedStringInternalMethods.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\UnsafeAtomicCounter.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\NativeSort.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\Attributes.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\NativeSort.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\NativeQueue.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\NativeHashMapExtensions.cs" />
     <Compile Include="Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections\Unicode.cs" />
