@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
     <Compile Include="Assets\Scripts\Forest\NavPlayerMovement.cs" />
     <Compile Include="Assets\Scripts\CountGui.cs" />
     <Compile Include="Assets\Scripts\ItemCollect.cs" />
@@ -955,6 +956,10 @@
       <Project>{CBB158D8-6D0A-CA5B-0AD9-04DE7DA08BDF}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.Editor.csproj">
+      <Project>{96F1E8C8-CE6E-36D0-F8B1-E81AE952DC2C}</Project>
+      <Name>Unity.Animation.Rigging.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
       <Project>{3E71D82E-E4D6-AD60-E484-CEBC9564DABC}</Project>
       <Name>Unity.Timeline.Editor</Name>
@@ -1090,6 +1095,10 @@
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{7EA45E3D-842A-E4CE-DF91-035D95A4097A}</Project>
       <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Animation.Rigging.csproj">
+      <Project>{3FDC812D-75BB-99C2-EDAC-FA25B2733575}</Project>
+      <Name>Unity.Animation.Rigging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

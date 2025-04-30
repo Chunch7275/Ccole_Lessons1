@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class BearAgent : MonoBehaviour
 {
-
     private Bot bot;
-
     private bool hiveDropped = false;
+    private Vector3 hivePosition;
 
-    private Vector3 HivePosition;
     // Start is called before the first frame update
     void Start()
     {
         bot = GetComponent<Bot>();
 
         NavPlayerMovement.DroppedHive += OnHiveDrop;
-
     }
 
     // Update is called once per frame
@@ -24,19 +21,18 @@ public class BearAgent : MonoBehaviour
     {
         bool canSeeTarget = bot.CanSeeTarget();
 
-        if (!canSeeTarget)
-        {
+        if (!canSeeTarget) {
             bot.Wander();
-        } else if (!hiveDropped) 
-        {
+        } else if (!hiveDropped) {
             bot.Pursue();
-        } else if (hiveDropped) 
-        {
-            bot.Seek(HivePosition);
+        } else if (hiveDropped) {
+            bot.Seek(hivePosition);
         }
     }
-    void OnHiveDrop(Vector3 HivePosition)
+
+    void OnHiveDrop(Vector3 position)
     {
-    hiveDropped = true;
+        hiveDropped = true;
+        hivePosition = position;
     }
 }

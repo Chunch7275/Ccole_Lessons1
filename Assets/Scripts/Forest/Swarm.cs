@@ -8,24 +8,21 @@ public class Swarm : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> waypoints;
-    private int waypointindex;
-
     [SerializeField]
-    private int waypoint_threshold = 1;
+    private float WAYPOINT_THRESHOLD = 1.0f;
 
+    private int waypointIndex;
     private NavMeshAgent agent;
-
     private Bot bot;
-
-    private bool HiveNotPickedUp = true;
+    private bool hiveNotPickedUp = true;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
         bot = GetComponent<Bot>();
 
+        // register for the hive picked up event
         HivePickUp.HivePickedUp += OnHivePickedUp;
 
         agent.SetDestination(waypoints[0].transform.position);
@@ -33,31 +30,32 @@ public class Swarm : MonoBehaviour
 
     private void OnHivePickedUp()
     {
-        HiveNotPickedUp = false;
+        hiveNotPickedUp = false;
     }
 
     // Update is called once per frame
     public void Patrol()
     {
-        if (Vector3.Distance(transform.position, waypoints[waypointindex].transform.position) < waypoint_threshold)
+        // if close enough to waypoint, then advance index
+        if (Vector3.Distance(transform.position, waypoints[waypointIndex].transform.position) < WAYPOINT_THRESHOLD)
         {
-            waypointindex++;
+            waypointIndex++;
 
-            if (waypointindex == waypoints.Count)
+            // wrap index around to 0 if we reach the end of list
+            if (waypointIndex == waypoints.Count)
             {
-                waypointindex = 0;
+                waypointIndex = 0;
             }
-        }
 
-        agent.SetDestination(waypoints[waypointindex].transform.position);
+            agent.SetDestination(waypoints[waypointIndex].transform.position);
+        }
     }
+
     void Update()
     {
-        if (HiveNotPickedUp)
-        {
+        if (hiveNotPickedUp) {
             Patrol();
-        } else
-        {
+        } else {
             bot.Pursue();
         }
     }

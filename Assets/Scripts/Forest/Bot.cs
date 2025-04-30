@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
 public class Bot : MonoBehaviour
 {
     NavMeshAgent agent;
     public GameObject target;
     public GameObject[] hidingSpots;
     private Rigidbody rbTarget;
+
 
     float currentSpeed
     {
@@ -40,26 +40,27 @@ public class Bot : MonoBehaviour
 
     public void Pursue()
     {
-       // Vector3 targetLocation = target.transform.position + rbTarget.velocity;
+        // Vector3 targetLocation = target.transform.position + rbTarget.velocity;
 
-       // Seek(targetLocation);
+        // Seek(targetLocation);
 
-        
         Vector3 targetDir = target.transform.position - this.transform.position;
 
-        float relativeHeading = Vector3.Angle(this.transform.forward, this.transform.TransformVector(target.transform.forward));
+        float relativeHeading = Vector3.Angle(this.transform.forward, target.transform.forward);
 
         float toTarget = Vector3.Angle(this.transform.forward, targetDir);
 
+        // if the pursuer is in front and going in about the same direction as target,
+        // or the target's velocity is pretty much zero,
+        // then, just seek
         if ((toTarget > 90 && relativeHeading < 20) || rbTarget.velocity.magnitude < 0.01f)
         {
-           Seek(target.transform.position);
-           return;
+            Seek(target.transform.position);
+            return;
         }
 
         float lookAhead = targetDir.magnitude / (agent.speed + rbTarget.velocity.magnitude);
         Seek(target.transform.position + target.transform.forward * lookAhead);
-        
     }
 
     public void Evade()
@@ -84,19 +85,19 @@ public class Bot : MonoBehaviour
         wanderTarget *= wanderRadius;
 
         Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+        // Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
 
         Seek(this.transform.position + targetLocal);
     }
 
-    public void Hide()
+    void Hide()
     {
         float dist = Mathf.Infinity;
         Vector3 chosenSpot = Vector3.zero;
 
         for (int i = 0; i < hidingSpots.Length; i++)
         {
-            Vector3 hideDir =hidingSpots[i].transform.position - target.transform.position;
+            Vector3 hideDir = hidingSpots[i].transform.position - target.transform.position;
             Vector3 hidePos = hidingSpots[i].transform.position + hideDir.normalized * 10;
 
             if (Vector3.Distance(this.transform.position, hidePos) < dist)
@@ -107,9 +108,10 @@ public class Bot : MonoBehaviour
         }
 
         Seek(chosenSpot);
+
     }
 
-    public void CleverHide()
+    void CleverHide()
     {
         float dist = Mathf.Infinity;
         Vector3 chosenSpot = Vector3.zero;
@@ -118,7 +120,7 @@ public class Bot : MonoBehaviour
 
         for (int i = 0; i < hidingSpots.Length; i++)
         {
-            Vector3 hideDir =hidingSpots[i].transform.position - target.transform.position;
+            Vector3 hideDir = hidingSpots[i].transform.position - target.transform.position;
             Vector3 hidePos = hidingSpots[i].transform.position + hideDir.normalized * 100;
 
             if (Vector3.Distance(this.transform.position, hidePos) < dist)
@@ -153,7 +155,7 @@ public class Bot : MonoBehaviour
         return false;
     }
 
-    public bool CanTargetSeeMe()
+    bool CanTargetSeeMe()
     {
         RaycastHit raycastInfo;
         Vector3 targetFwdWS = target.transform.TransformDirection(target.transform.forward);
@@ -165,5 +167,13 @@ public class Bot : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player") && collision.gameObject.GetComponent<NavPlayerMovement>().dead)
+        {
+            agent.isStopped = true;
+        }
     }
 }

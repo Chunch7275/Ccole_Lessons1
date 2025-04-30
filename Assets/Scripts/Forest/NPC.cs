@@ -5,13 +5,10 @@ using UnityEngine.AI;
 
 public class NPC : MonoBehaviour
 {
-
     private NavMeshAgent agent;
 
     [SerializeField]
-
     private GameObject player;
-
 
     // Start is called before the first frame update
     void Start()
